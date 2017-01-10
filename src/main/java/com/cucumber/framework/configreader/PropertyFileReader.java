@@ -26,9 +26,13 @@ public class PropertyFileReader implements IconfigReader {
 	public PropertyFileReader() {
 		prop = new Properties();
 		try {
-			prop.load(ResourceHelper
-					.getResourcePathInputStream("configfile/"
-							+ "config.properties"));
+			String file = Test.class.getResource("/configfile/config.properties").getFile();
+			String newPropertyFile=file.replaceAll("target/test-classes","src/main/resources");
+			prop.load(new FileInputStream(newPropertyFile));
+
+			//prop.load(ResourceHelper
+			//.getResourcePathInputStream("configfile/"
+			//+ "config.properties"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
