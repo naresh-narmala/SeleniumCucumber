@@ -12,6 +12,8 @@ import org.apache.log4j.Level;
 import com.cucumber.framework.configuration.browser.BrowserType;
 import com.cucumber.framework.interfaces.IconfigReader;
 import com.cucumber.framework.utility.ResourceHelper;
+import org.junit.Test;
+import java.io.FileInputStream;
 
 
 /**
