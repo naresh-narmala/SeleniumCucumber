@@ -10,6 +10,7 @@ import org.apache.log4j.PropertyConfigurator;
 
 import com.cucumber.framework.utility.ResourceHelper;
 import org.junit.Test;
+import java.io.FileInputStream;
 
 
 /**
