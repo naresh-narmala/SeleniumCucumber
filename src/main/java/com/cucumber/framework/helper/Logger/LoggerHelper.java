@@ -25,8 +25,11 @@ public class LoggerHelper {
 		if(root)
 			return Logger.getLogger(clas);
 		
-		PropertyConfigurator.configure(ResourceHelper
-				.getResourcePath("configfile/log4j.properties"));
+		String file = Test.class.getResource("/configfile/log4j.properties").getFile();
+		String newLogFile=file.replaceAll("target/test-classes","src/main/resources");
+		PropertyConfigurator.configure(newLogFile);
+		//PropertyConfigurator.configure(ResourceHelper
+		//.getResourcePath("configfile/log4j.properties"));
 		root = true;
 		return Logger.getLogger(clas);
 	}
